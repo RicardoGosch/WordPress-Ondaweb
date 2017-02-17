@@ -19,6 +19,7 @@
  * Command tips
  */
 
+/*
 // Loop
 if(have_posts()):
   while(have_posts()):the_post();
@@ -27,5 +28,6 @@ if(have_posts()):
 endif;
 
 // Including external files
-get_template_part('content', get_post_format())
+get_template_part('content', get_post_format());
+*/
 ?>
