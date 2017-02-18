@@ -18,10 +18,7 @@
     <link rel="stylesheet" href="<?php echo $library ?>/css/style.css">
 
     <!-- Modules -->
-    <?php if(false):?>
-      <!-- BxSlider -->
-      <link rel='stylesheet' href='<?php echo $library ?>/modules/bxslider/bxslider.css'>
-    <?php endif; ?>
+    <?php get_template_part('content-modules-header', get_post_format()); ?>
 
     <?php wp_head(); ?>
   </head>

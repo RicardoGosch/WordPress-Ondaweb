@@ -50,6 +50,10 @@ them however you see fit.
     width: 75%;
   }
 
+  .m-none {
+    display: none;
+  }
+
 } // end mobile styles
 
 
@@ -105,6 +109,10 @@ them however you see fit.
   .t-4of5 {
     @include grid-col;
     width: 80%;
+  }
+
+  .t-none {
+    display: none;
   }
 
 } // end tablet
@@ -221,6 +229,10 @@ them however you see fit.
   .d-1of12 {
     @include grid-col;
     width: 8.33%;
+  }
+
+  .d-none {
+    display: none;
   }
 
 } // end desktop styles
