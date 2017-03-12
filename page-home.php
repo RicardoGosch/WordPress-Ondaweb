@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying Category Archive pages
+ * Template for displaying Index page
  *
  * @package WordPress
  * @subpackage ondaweb
@@ -17,17 +17,7 @@ global $library;
 /**
  * Command tips
  */
-
 /*
-// Loop
-
-if(have_posts()):
-  while(have_posts()):the_post();
-    the_author();
-    get_the_author_meta('ID');
-  endwhile;
-endif;
-
 // Including external files
 get_template_part('content', get_post_format());
 */

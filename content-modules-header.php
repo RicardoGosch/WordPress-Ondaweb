@@ -8,16 +8,13 @@
 * @subpackage ondaweb
 * @since Ondaweb 1.0
 */
-?>
 
+global $library;
+?>
 <?php if(false):?>
   <!-- BxSlider -->
-  <link rel='stylesheet' href='<?php echo $library ?>/modules/bxslider/bxslider.css'>
-
+  <link rel='stylesheet' href='<?php echo $library ?>/node_modules/bxslider/dist/jquery.bxslider.min.css'>
 <?php endif; if(false):?>
   <!-- Other External Module Below -->
-  <link rel="stylesheet" href="">
-
+  <link rel="stylesheet" href="<?php echo $library; ?>/node_modules/">
 <?php endif; ?>
-
-?>

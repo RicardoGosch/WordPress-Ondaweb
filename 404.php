@@ -6,6 +6,8 @@
  * @subpackage ondaweb
  * @since Ondaweb 1.0
  */
+
+global $library;
 ?>
 <?php get_header(); ?>
 
@@ -14,5 +16,5 @@
 <?php
 /**
  * Command tips
- */ 
+ */
 ?>

@@ -8,4 +8,6 @@
  * @subpackage ondaweb
  * @since Ondaweb 1.0
  */
+
+ global $library;
  ?>

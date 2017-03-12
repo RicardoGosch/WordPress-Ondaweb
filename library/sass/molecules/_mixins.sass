@@ -17,69 +17,84 @@
 
 /* ======== Outros */
 =transition($transition...)
-    -moz-transition:     $transition linear
-    -o-transition:       $transition linear
-    -webkit-transition:  $transition linear
-    transition:          $transition linear
+  -moz-transition:     $transition linear
+  -o-transition:       $transition linear
+  -webkit-transition:  $transition linear
+  transition:          $transition linear
 
 =transition-ease($transition-ease...)
-    -moz-transition:     $transition-ease ease
-    -o-transition:       $transition-ease ease
-    -webkit-transition:  $transition-ease ease
-    transition:          $transition-ease ease
-
+  -moz-transition:     $transition-ease ease
+  -o-transition:       $transition-ease ease
+  -webkit-transition:  $transition-ease ease
+  transition:          $transition-ease ease
 
 =border-radius($radius)
-    border-radius: $radius
-    -webkit-border-radius: $radius
-    -moz-border-radius: $radius
-    -ms-border-radius: $radius
+  border-radius: $radius
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
 
 =box-sizing($box)
-    -webkit-box-sizing: $box
-    -moz-box-sizing: $box
-    box-sizing: $box
+  -webkit-box-sizing: $box
+  -moz-box-sizing: $box
+  box-sizing: $box
 
 @function calculateRem($size)
   $remSize: $size / 16px
   @return $remSize * 1rem
 
-=font-size($size)
-  // font-size: $size
-  font-size: calculateRem($size)
+// =font-size($size)
+//   font-size: $size
+//   font-size: calculateRem($size)
 
 =opacity($opacity)
   opacity: $opacity
   $opacity-ie: $opacity * 100
   filter: alpha(opacity=$opacity-ie)
 
-/* ======== Background Color Opacity */
 =background-opacity($color: #000, $opacity: 0.85)
   background: $color
   background: rgba($color, $opacity)
 
 =box-shadow($shadow)
-    -webkit-box-shadow: $shadow
-    -moz-box-shadow: $shadow
-    box-shadow: $shadow
+  -webkit-box-shadow: $shadow
+  -moz-box-shadow: 		$shadow
+  box-shadow: 				$shadow
 
 =calc($property, $expression)
-    #{$property}: -webkit-calc(#{$expression})
-    #{$property}: calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
 
-
-/* ======== Columns */
 =columns($count: 3, $gap: 10)
   @include css3-prefix('column-count', $count)
   @include css3-prefix('column-gap', $gap)
 
-
-// Bones
-/* BOX SIZING */
-
-/* @include box-sizing(border-box); */
 =box-sizing($type: border-box)
-	-webkit-box-sizing: $type;
-	-moz-box-sizing:    $type;
-	-ms-box-sizing:     $type;
-	box-sizing:         $type;
+  -webkit-box-sizing: $type
+  -moz-box-sizing:    $type
+  -ms-box-sizing:     $type
+  box-sizing:         $type
+
+=clip-path($clip)
+  -webkit-clip-path:  $clip
+  -moz-clip-path:     $clip
+  -ms-clip-path:      $clip
+  clip-path:          $clip
+
+=pseudo($display: block, $content: '')
+  content: $content
+  display: $display
+
+=responsive-ratio($x,$y, $pseudo: false)
+  $padding: unquote( ( $y / $x ) * 100 + '%' )
+  @if $pseudo
+    &:before
+      @include pseudo($pos: relative)
+      width: 100%
+      padding-top: $padding
+  @else
+    padding-top: $padding
+
+=font-size($size: 15px)
+  font-size: $size
+  font-size: ($size / 16px) * 1rem

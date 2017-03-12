@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 library/css
-=======
+library/node_modules
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -12,11 +11,8 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
-
 /.htaccess
 /license.txt
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
-
->>>>>>> 3f48b9b0125d1d1593b349b0b37abb83c3ce504e
