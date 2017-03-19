@@ -1,23 +1,19 @@
 .wrap
-  margin: 0 auto
+	margin: 0 auto
 
-  // Tablet
-  @media (min-width: $mobile) and (max-width: $tablet)
-    width: 88%
-    max-width: $tablet
+	// Tablet
+	@media (min-width: $mobile)
+		width: 88%
+		max-width: $tablet
 
-  // Desktop
-  @media (min-width: $desktop )
-    width: 88%
-    max-width: $desktop
+	// Desktop
+	@media (min-width: $desktop)
+		max-width: $desktop
 
-  // Mobile
-  @media (max-width: $mobile )
-    width: 100%
-    max-width: $mobile
+	// Mobile
+	@media (max-width: $mobile)
+		width: 90%
+		max-width: $mobile
 
-.cf
-  clear: both
-// tablet @media (min-width: $mobile) and (max-width: $tablet)
-// desktop @media (min-width: $desktop )
-// desktop @media (max-width: $mobile )
+.cf, .clearfix
+	clear: both

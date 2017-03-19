@@ -1,8 +1,8 @@
 <?php global $library; $library = get_template_directory_uri().'/library'; ?>
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="<?php bloginfo('charset'); ?>">
 		<title><?php wp_title('-', true, '-'); ?></title>
 
 		<?php // Favicon ?>

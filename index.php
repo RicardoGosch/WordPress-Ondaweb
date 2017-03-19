@@ -1,3 +1,1 @@
-<?php get_header(); ?>
-
-<?php get_footer(); ?>
+<?php // set 'page-home.php' how home page ?>
