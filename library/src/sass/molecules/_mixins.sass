@@ -65,3 +65,22 @@
 @function calculateRem($size)
 	$remSize: $size / 16px
 	@return $remSize * 1rem
+
+=wrap
+	margin-left: auto
+	margin-right: auto
+
+	// Tablet
+	@media (min-width: $mobile)
+		width: 88%
+		max-width: $tablet
+
+	// Desktop
+	@media (min-width: $desktop)
+		max-width: $desktop
+		width: 90%
+
+	// Mobile
+	@media (max-width: $mobile)
+		width: 90%
+		max-width: $mobile

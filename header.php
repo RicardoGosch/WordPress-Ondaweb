@@ -6,19 +6,13 @@
 		<title><?php wp_title('-', true, '-'); ?></title>
 
 		<?php // Favicon ?>
-		<link rel="icon" href="<?php echo $library; ?>/favicon.png" />
+		<link rel="icon" href="<?php echo $library; ?>/dist/image/favicon.png" />
 		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo $library; ?>/favicon.ico" />
+			<link rel="shortcut icon" href="<?php echo $library; ?>/dist/image/favicon.ico" />
 		<![endif]-->
 
-		<?php // Grid, Normalize ?>
-		<link rel="stylesheet" href="<?php echo $library ?>/css/core.css">
-
-		<?php // Style ?>
-		<link rel="stylesheet" href="<?php echo $library ?>/css/style.min.css">
-
-		<?php // Modules ?>
-		<?php get_template_part('content-modules-header', get_post_format()); ?>
+		<?php // Style's ?>
+		<?php get_template_part('content-style', get_post_format()); ?>
 
 		<?php // Pingback ?>
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -35,16 +29,5 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<header>
-			<div class="wrap">
-				<div class="logo">
-					<a href="<?php echo get_site_url(); ?>" title="Página inicial do <?php bloginfo();?>">
-						<figure>
-								<img src="" alt="Logotipo <?php echo bloginfo(); ?>">
-						</figure>
-					</a>
-				</div> <!-- end .logo -->
-				<nav>
-				</nav>
-			</div> <!-- end .wrap -->
 		</header>
 		<main>
