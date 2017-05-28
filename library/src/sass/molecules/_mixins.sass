@@ -1,0 +1,67 @@
+=gradient-2($angle,$color1, $color2)
+	background-color: $color1
+	background-image: -webkit-linear-gradient($angle, $color1, $color2)
+	background-image:    -moz-linear-gradient($angle, $color1, $color2)
+	background-image:     -ms-linear-gradient($angle, $color1, $color2)
+	background-image:      -o-linear-gradient($angle, $color1, $color2)
+	background-image:         linear-gradient($angle, $color1, $color2)
+
+=gradient-3($angle,$color1, $color2, $color3)
+	background-color: $color1
+	background-image: -webkit-linear-gradient($angle, $color1, $color2, $color3)
+	background-image:    -moz-linear-gradient($angle, $color1, $color2, $color3)
+	background-image:     -ms-linear-gradient($angle, $color1, $color2, $color3)
+	background-image:      -o-linear-gradient($angle, $color1, $color2, $color3)
+	background-image:         linear-gradient($angle, $color1, $color2, $color3)
+
+=transition($transition...)
+	-moz-transition:     $transition linear
+	-o-transition:       $transition linear
+	-webkit-transition:  $transition linear
+	transition:          $transition linear
+
+=transition-ease($transition-ease...)
+	-moz-transition:     $transition-ease ease
+	-o-transition:       $transition-ease ease
+	-webkit-transition:  $transition-ease ease
+	transition:          $transition-ease ease
+
+=calc($property, $expression)
+	#{$property}: -webkit-calc(#{$expression})
+	#{$property}: calc(#{$expression})
+
+=height($height)
+	height: $height
+	line-height: $height
+	
+=size($width, $height: $width)
+	width: $width
+	height: $height
+
+=size-line($width, $height: $width, $line-height: $height)
+	+size($width, $height)
+	line-height: $line-height
+
+=merge($top, $right: $top, $bottom: $right, $left: $bottom)
+	top: $top
+	right: $right
+	bottom: $bottom
+	left: $left
+
+=responsive-ratio($x,$y, $pseudo: false)
+	$padding: unquote( ( $y / $x ) * 100 + '%' )
+	@if $pseudo
+		&:before
+			@include pseudo($pos: relative)
+			width: 100%
+			padding-top: $padding
+	@else
+		padding-top: $padding
+
+=font-size($size: 15px)
+	font-size: $size
+	font-size: ($size / 16px) * 1rem
+
+@function calculateRem($size)
+	$remSize: $size / 16px
+	@return $remSize * 1rem
