@@ -58,29 +58,80 @@
 	@else
 		padding-top: $padding
 
-=font-size($size: 15px)
-	font-size: $size
-	font-size: ($size / 16px) * 1rem
+=font-size($m: 15px, $t: $m, $d: $t)
+	+mobile
+		font-size: $m
+		font-size: ($m / 16px) * 1rem
+	+tablet
+		font-size: $t
+		font-size: ($t / 16px) * 1rem
+	+desktop
+		font-size: $d
+		font-size: ($d / 16px) * 1rem
 
 @function calculateRem($size)
 	$remSize: $size / 16px
 	@return $remSize * 1rem
 
-=wrap
+=wrap($m: $mobile, $t: $tablet, $d: $desktop)
 	margin-left: auto
 	margin-right: auto
 
+	@if ($m == null)
+		$m: $mobile
+	@if ($t == null)
+		$t: $tablet
+	@if ($d == null)
+		$d: $desktop
+
 	// Tablet
-	@media (min-width: $mobile)
+	+tablet
 		width: 88%
-		max-width: $tablet
+		max-width: $t
 
 	// Desktop
-	@media (min-width: $desktop)
-		max-width: $desktop
+	+desktop
 		width: 90%
+		max-width: $d
 
 	// Mobile
-	@media (max-width: $mobile)
+	+mobile
 		width: 90%
-		max-width: $mobile
+		max-width: $m
+
+=mp($m: 0, $p: $m)
+	margin: $m
+	padding: $p
+
+=mobile
+	@media (max-width: $mobile)
+		@content
+
+=tablet
+	@media (min-width: $mobile) and (max-width: $tablet)
+		@content
+
+=desktop
+	@media (min-width: $desktop)
+		@content
+
+=mobile-tablet
+	@media (max-width: $tablet)
+		@content
+
+=tablet-desktop
+	@media (min-width: $mobile)
+		@content
+
+=mobile-desktop
+	@media (max-width: $mobile), (min-width: $desktop)
+		@content
+
+=ico($content)
+	content: $content
+	font-family: $ico
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
