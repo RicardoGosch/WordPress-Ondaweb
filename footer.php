@@ -6,7 +6,7 @@
 					<p>
 						© <?php echo date('Y'); ?> <?php bloginfo(); ?>. Todos os direitos reservados.
 						<a href="http://ondaweb.com.br/" target="_blank">
-							<img src="<?php echo $library; ?>/dist/image/ondaweb-color.png" alt="Logotipo da Agência Digital Ondaweb">
+							<img src="<?php echo $library; ?>/dist/image/ondaweb/logo-color.png" alt="Logotipo da Agência Digital Ondaweb">
 						</a>
 					</p>
 				</div>
