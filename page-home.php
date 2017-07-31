@@ -3,7 +3,7 @@
  * Index
  */
 
-global $library;
+global $assets;
 ?>
 <?php get_header(); the_post(); ?>
 

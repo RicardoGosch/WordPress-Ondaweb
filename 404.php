@@ -3,7 +3,7 @@
  * 404 pages (Not Found)
  */
 
-global $library;
+global $assets;
 ?>
 <?php get_header(); ?>
 

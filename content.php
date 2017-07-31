@@ -3,5 +3,5 @@
  * Import ...
  */
 
- global $library;
+ global $assets;
  ?>

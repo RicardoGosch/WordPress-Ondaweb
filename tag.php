@@ -3,7 +3,7 @@
  * Tag Archive
  */
 
-global $library;
+global $assets;
 ?>
 <?php get_header(); ?>
 

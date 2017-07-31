@@ -3,7 +3,7 @@
  * All single posts
  */
 
-global $library;
+global $assets;
 ?>
 <?php get_header(); the_post(); ?>
 

@@ -3,7 +3,7 @@
 * Import styles link at header.php
 */
 
-global $library;
+global $assets;
 ?>
-<link rel="stylesheet" href="<?php echo $library ?>/dist/css/core.min.css">
-<link rel="stylesheet" href="<?php echo $library ?>/dist/css/style.min.css">
+<link rel="stylesheet" href="<?php echo $assets ?>/dist/css/core.css">
+<link rel="stylesheet" href="<?php echo $assets ?>/dist/css/style.css">

@@ -5,5 +5,5 @@
 * "sidebar-slug.php"
 */
 
-global $library;
+global $assets;
 ?>

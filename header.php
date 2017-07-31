@@ -1,4 +1,4 @@
-<?php global $library; $library = get_template_directory_uri().'/library'; ?>
+<?php global $assets; $assets = get_template_directory_uri().'/assets'; ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
@@ -6,9 +6,9 @@
 		<title><?php wp_title('-', true, '-'); ?></title>
 
 		<?php // Favicon ?>
-		<link rel="icon" href="<?php echo $library; ?>/dist/image/favicon.png" />
+		<link rel="icon" href="<?php echo $assets; ?>/image/favicon.png" />
 		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo $library; ?>/dist/image/favicon.ico" />
+			<link rel="shortcut icon" href="<?php echo $assets; ?>/image/favicon.ico" />
 		<![endif]-->
 
 		<?php // Style's ?>

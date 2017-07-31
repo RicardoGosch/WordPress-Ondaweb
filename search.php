@@ -3,7 +3,7 @@
  * Search results
  */
 
-global $library;
+global $assets;
 ?>
 <?php get_header(); ?>
 
