@@ -3,6 +3,7 @@ var stylus      = require('gulp-stylus');
 var browserSync = require('browser-sync').create();
 var prefix      = require('autoprefixer-stylus');
 var minify      = require('gulp-minify');
+var reload      = browserSync.reload;
 
 const files = {
 	src: {
@@ -11,8 +12,11 @@ const files = {
 			unique: "./assets/src/styl/*.styl"
 		},
 		js: {
-			all: "./assets/src/js/**/*.styl",
-			unique: "./assets/src/styl/*.styl"
+			all: "./assets/src/js/**/*.js",
+			unique: "./assets/src/js/*.js"
+		},
+		php: {
+			all: "./*.php"
 		},
 		image: "./assets/src/image/**/*"
 
@@ -26,7 +30,7 @@ const files = {
 
 // Compila o stylus
 gulp.task('stylus', function(){
-	return gulp.src(files.src.js.unique)
+	return gulp.src(files.src.css.unique)
 		.pipe(stylus({
 			use: prefix(),
 			compress: true
@@ -51,18 +55,16 @@ gulp.task('js', function(){
 // Live Preview
 gulp.task('sync', function () {
 	browserSync.init({
-		server: {
-			// baseDir: "./index.html"
-		},
-		host: "./",
+		proxy: "http://127.0.0.1/{slug}",
 		open: false,
+		port: 8080,
 		notify: false
 	});
 });
 
 // Chama a galera toda
 gulp.task('default', ['js', 'stylus', 'sync'], function(){
-	gulp.watch(files.src.css.all, ['stylus']);
-	gulp.watch(files.src.js.all, ['js']);
-	// gulp.watch("./**/*").on('change', browserSync.reload);
+	gulp.watch(files.src.css.all, ['stylus']).on('change', reload);
+	gulp.watch(files.src.js.all, ['js']).on('change', reload);
+	gulp.watch(files.src.php.all).on('change', reload);
 });
